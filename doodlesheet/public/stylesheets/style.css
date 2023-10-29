@@ -3,6 +3,41 @@ body {
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
 }
 
-a {
-  color: #00B7FF;
+.container-log-in{
+  text-align-last : center
+}
+
+.form-log-in{
+  display: inline-block;
+}
+
+.form-group{
+  display: table-caption;
+}
+
+.my-button-start{
+  background-color: #007BFF; /* Background color for the button */
+  color: #fff; /* Text color for the button */
+  border: none; /* Remove button border */
+  padding: 10px 20px; /* Adjust padding as needed */
+  text-decoration: none; /* Remove underline */
+  cursor: pointer; /* Change cursor on hover */
+  border-radius: 5px; /* Add rounded corners if desired */
+  /* Add more styles as needed */
+}
+
+.btn.btn-primary{
+  background-color: #007BFF; /* Background color for the button */
+  color: #fff; /* Text color for the button */
+  border: none; /* Remove button border */
+  padding: 10px 20px; /* Adjust padding as needed */
+  text-decoration: none; /* Remove underline */
+  cursor: pointer; /* Change cursor on hover */
+  border-radius: 5px; /* Add rounded corners if desired */
+  margin-top: 10%;
+  /* Add more styles as needed */
+}
+
+.container-home-page{
+  text-align-last: center
 }

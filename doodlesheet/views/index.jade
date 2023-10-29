@@ -1,5 +1,8 @@
 extends layout
 
 block content
-  h1= title
-  p Welcome to #{title}
+  .container-home-page
+    h1= title
+    p Welcome to #{title}
+    button.my-button-start
+      a(href="/login") Start

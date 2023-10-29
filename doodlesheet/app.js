@@ -1,14 +1,20 @@
-// variables and constants
+// variables et constantes
 var createError = require('http-errors');
 var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
+
+
+// les routes
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
-var app = express();
-const express = require('express');
+var loginRouter = require('./routes/login');
 
-// connection to the database DoodleSheet
+
+const express = require('express');
+var app = express();
+
+// connection a la database DoodleSheet
 const { default: mongoose } = require('mongoose');
 const url = "mongodb://127.0.0.1/DoodleSheet"
 async function connect(){
@@ -21,9 +27,9 @@ async function connect(){
 }
 connect();
 
-// listen on port 3000
-app.listen(3000, () => {
-  console.log("Server started on port 3000")
+// ecoute sur le port 8000
+app.listen(8000, () => {
+  console.log("Server started on port 8000")
 })
 
 // view engine setup
@@ -38,6 +44,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
+app.use('/login', loginRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
@@ -55,5 +62,5 @@ app.use(function(err, req, res, next) {
   res.render('error');
 });
 
+// exporter les variables globales pour les autres fichiers
 module.exports = app;
-
