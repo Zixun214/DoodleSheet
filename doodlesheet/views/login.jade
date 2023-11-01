@@ -1,13 +1,12 @@
 extends layout
 
-
 block content
  .container-log-in
    h1 Login
    p.lead
      | Sign in with your account. Don’t have one?
      a(href='/register')  Register Now.
-     form.form-log-in(role='form', action='/login', method='post')
+     form.form-log-in(role='form', action='/login/authentification', method='post')
        .form-group
          label(for='username') Username
          input.form-control(type='text', id='user', name='username', placeholder='enter a username')
@@ -15,4 +14,3 @@ block content
          label(for='password') Password
          input.form-control(type='password', id='password', name='password', placeholder='enter a password')
        button.btn.btn-primary(type='submit') Submit
-       &nbsp;
