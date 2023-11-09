@@ -9,7 +9,7 @@ const usercollectionSchema = new mongoose.Schema({
   password: String
 });
 
-let Usercollection;
+let Usercollection;//try to get usercollection, if none, create one
 try{
   Usercollection = mongoose.model('usercollections');
 }
