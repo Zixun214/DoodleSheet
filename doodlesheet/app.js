@@ -6,12 +6,13 @@ var logger = require('morgan');
 
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
-var registerRouter = require('./routes/register');
+//var registerRouter = require('./routes/register');
 var loginRouter = require('./routes/login');
+const fileRouter = require('./routes/fileOperation');
 
 
 const express = require('express');
-var app = express();
+const app = express();
 
 // connection a la database DoodleSheet
 const { default: mongoose } = require('mongoose');
@@ -45,10 +46,11 @@ app.use(express.static(path.join(__dirname, 'public')));//docs static, ex: .css,
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
 app.use('/error', usersRouter);
-app.use('/register', registerRouter);
-app.use('/registerdone', registerRouter);
+//app.use('/register', registerRouter);
+//app.use('/registerdone', registerRouter);
 app.use('/login', loginRouter);
 app.use('/authentification', loginRouter);
+app.use('/files',fileRouter);
 
 //****fonction middlewares**** ajouter ici
 // catch 404 and forward to error handler
