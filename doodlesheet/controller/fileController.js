@@ -12,4 +12,4 @@ const createFile = async (data, userId) => {
 
 
 // and here ...
-module.exports = { createFile, updateFile };
+module.exports = { createFile};
