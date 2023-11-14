@@ -34,7 +34,7 @@ app.listen(8000, () => {
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
-app.set('view engine', 'jade');//html
+app.set('view engine', 'ejs');//html
 
 app.use(logger('dev'));
 app.use(express.json());
@@ -66,7 +66,7 @@ app.use(function(err, req, res, next) {
 
   // render the error page
   res.status(err.status || 500);
-  res.render('error');
+  res.render('error', { title: 'Error Page', message: err.message, error: err });
 });
 
 // exporter les variables globales pour les autres fichiers

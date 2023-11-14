@@ -3,7 +3,7 @@ body {
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
 }
 
-.container-log-in{
+.container-log-in, .container-home-page{
   text-align-last : center
 }
 
@@ -36,8 +36,4 @@ body {
   border-radius: 5px; /* Add rounded corners if desired */
   margin-top: 10%;
   /* Add more styles as needed */
-}
-
-.container-home-page{
-  text-align-last: center
 }

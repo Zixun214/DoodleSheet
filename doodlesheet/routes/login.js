@@ -10,7 +10,7 @@ const loginController = require('../controller/loginController');
  * @brief Cette fonction permet l'affichage de la page Login
  */
 router.get("/", async(req, res) => {
-  res.render('login');
+  res.render('login', { title: 'Login' });
 })
 
 /**

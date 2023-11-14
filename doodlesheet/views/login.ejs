@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title><%= title %></title>
+    <link rel="stylesheet" href="stylesheets/style.css">
+</head>
+    <body>
+        <div class="container-log-in">
+            <h1>Login</h1>
+            <p class="lead">
+                Sign in with your account. Don’t have one?
+                <a href='/register'>Register Now.</a>
+            </p>
+            <form class="form-log-in" role="form" action="/login/authentification" method="post">
+                <div class="form-group">
+                    <label for="username">Username</label>
+                    <input class="form-control" type="text" id="user" name="username" placeholder="enter a username">
+                </div>
+                <div class="form-group">
+                    <label for="password">Password</label>
+                    <input class="form-control" type="password" id="password" name="password" placeholder="enter a password">
+                </div>
+                <button class="btn btn-primary" type="submit">Submit</button>
+            </form>
+        </div>
+    </body>
+</html>
