@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title><%= title %></title>
+    <link rel="stylesheet" href="stylesheets/style.css">
+</head>
+    <body>
+        <div class="container-home-page">
+            <h1><%= title %></h1>
+            <p>Welcome to <%= title %></p>
+            <!--<button class="my-button-start">
+                <a href="/login">Start</a>
+            </button>-->
+        </div>
+        <div class="div-table">
+            <table class="list-table">
+                <tr>
+                    <th>Sheet name</th>
+                    <th>Creation date</th>
+                    <th>Action (open)</th>
+                    <th>Action (delete)</th>
+                </tr>
+                <% all.forEach(function (item) { %>
+                <tr>
+                    <td> <%= item.sheetname %> </td>
+                    <td> <%= item.dateCreated %> </td>
+                    <td> <button class="my-button-action-open">
+                        <a href="#">Open</a>
+                    </button> </td>
+                    <td> <button class="my-button-action-open">
+                        <a href="#">Delete</a>
+                    </button> </td>
+                </tr>
+                <% }) %>
+               
+            </table>
+        </div>
+            <ul>
+            </ul>
+    </body>
+</html>

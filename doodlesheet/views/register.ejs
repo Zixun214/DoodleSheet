@@ -1,8 +1,15 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title><%= title %></title>
+    <link rel="stylesheet" href="stylesheets/style.css">
+</head>
+<body>
 <div class="container-log-in">
     <h1>Create your account</h1>
     <p class="lead">
     </p>
-    <form class="form-log-in" role="form" action="/register/registerdone" method="post">
+    <form class="form-log-in" role="form" action="/register/registerNewClient" method="post">
         <div class="form-group">
             <label for="user">Username</label>
             <input class="form-control" type="text" id="user" name="username" placeholder="enter a username">
@@ -14,3 +21,4 @@
         <button class="btn btn-primary" type="submit">Sign up</button>
     </form>
 </div>
+</body>

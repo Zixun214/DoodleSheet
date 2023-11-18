@@ -11,7 +11,7 @@ const loginController = require('../controller/loginController');
  */
 router.get("/", async(req, res) => {
   res.render('login', { title: 'Login' });
-})
+});
 
 /**
  * @from POST
@@ -22,8 +22,13 @@ router.get("/", async(req, res) => {
  */
 router.post('/authentification', async function(req, res, next) {
   await loginController.authentification(req, res, next);
-  if(res.statusCode == 200) res.send("Connection réussie");
-  if(res.statusCode == 401) res.send("Connection non réussie");
+  if(res.statusCode == 200){
+    //res.send("Connection réussie");
+    res.redirect('/sheets');
+  }
+  if(res.statusCode == 401){
+    res.send("Connection non réussie");
+  }
 });
 
 

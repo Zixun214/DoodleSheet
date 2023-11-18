@@ -1,59 +1,37 @@
-var express = require('express');
+var express = require('express'); 
 var router = express.Router();
-const mongoose = require('mongoose');
-const bcrypt = require('bcrypt')
+const registerController = require('../controller/registerController');
 
-// modele usercollections
-const usercollectionSchema = new mongoose.Schema({
-  name: String,
-  password: String
-});
 
-try{
-  Usercollection = mongoose.model('usercollections');
-}
-catch(error){
-  Usercollection = mongoose.model('usercollections', usercollectionSchema);
-}
-
-/* GET register page. */
+/**
+ * @from GET
+ * @param {*} req La requête
+ * @param {*} res La réponse
+ * @brief Cette fonction permet l'affichage de la page Sign Up
+ */
 router.get('/', function(req, res, next) {
-  res.render('register');
+  res.render('register', { title: 'Sign Up' });
 });
 
 
-/* POST register information */
-router.post('/registerdone', async function(req, res, next) {
-  const postData = req.body;
-  console.log("Received POST data : ", postData);
-  //Test connection
-  if(postData.username == '' || postData.password == '')
-    res.send('Les champs ne sont pas complets');
-  else{
-    var user = await Usercollection.findOne({name:postData.username});
-    if(user){
-      res.send('Ce nom est déjà utilisé par un autre utilisateur'); 
-    }
-    else{
-      if(postData.password.length >= 8){
-        res.send('Votre compte a été créer avec succees');
-        const newUser = new Usercollection({
-          name: postData.username,
-          password: postData.password
-        });
-        newUser.save()
-        .then((result) => {
-          res.send('Nouvel utilisateur enregistré :', result);
-        })
-        .catch((error) => {
-        res.send('Erreur lors de l\'enregistrement de l\'utilisateur :', error);
-        });
-      }
-      else{
-        res.send('Le mot de passe est trop court (au moins 8 caracteres)');
-      }
-    }
+/**
+ * @from POST
+ * @param {*} req La requête
+ * @param {*} res La réponse
+ * @param {n} next
+ * @brief Cette fonction gère l'inscription du client
+ */
+router.post('/registerNewClient', async function(req, res, next) {
+  await registerController.registerNewClient(req, res, next);
+  if(res.statusCode == 200){
+    res.send("Compte créer avec succées");
+    //res.redirect('/login');
+  }
+  if(res.statusCode == 401){
+    res.send("Inscirption échouée");
   }
 });
+
+
 
 module.exports = router;

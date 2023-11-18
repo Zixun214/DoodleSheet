@@ -7,6 +7,48 @@ body {
   text-align-last : center
 }
 
+.sheet-table{
+  border-style: solid;
+  margin-top: 5%;
+  border-width: 2px;
+}
+
+.div-table{
+  text-align: -webkit-center;
+  white-space-collapse: preserve;
+}
+
+.list-table{
+  text-align: center;
+}
+th {
+  background-color: #007BFF;
+  color: white;
+}
+.sheet{
+  text-align: -webkit-center;
+}
+
+td {
+ min-width: 100px;
+}
+
+.title-sub-col{
+  text-align-last: center ;
+}
+
+.title-col{
+  text-align-last: center ;
+}
+
+.title-line{
+  text-align-last: center ;
+}
+
+table {
+  border-style: hidden;
+}
+
 .form-log-in{
   display: inline-block;
 }
@@ -24,6 +66,19 @@ body {
   cursor: pointer; /* Change cursor on hover */
   border-radius: 5px; /* Add rounded corners if desired */
   /* Add more styles as needed */
+}
+
+
+.my-button-action-open{
+  background-color: white;
+  border-color: #007BFF;
+  border-radius: 5%;
+}
+
+.my-button-action-del{
+  background-color: white;
+  border-color: #ff0036;
+  border-radius: 5%;
 }
 
 .btn.btn-primary{

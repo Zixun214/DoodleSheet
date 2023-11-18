@@ -5,11 +5,19 @@ const mongoose = require('mongoose');
  */
 const usercollectionSchema = new mongoose.Schema({
     name: String,
-    password: String
+    password: String,
+    userid: Number
 });
   
 /**
- * @constant Usercollection Le modèle de Utilisateur 
+ * @constant Usercollections Le modèle de Utilisateur 
  */
-const Usercollection = mongoose.model('usercollections', usercollectionSchema);
-module.exports = Usercollection;
+
+let Usercollections;
+//try{
+  //  Usercollections = mongoose.model('usercollections');
+//}
+//catch(error){
+Usercollections = mongoose.model('usercollections', usercollectionSchema);
+//}
+module.exports = Usercollections;

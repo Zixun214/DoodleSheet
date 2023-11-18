@@ -6,9 +6,12 @@ var logger = require('morgan');
 
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
-//var registerRouter = require('./routes/register');
+var registerRouter = require('./routes/register');
 var loginRouter = require('./routes/login');
+var sheetRouter = require('./routes/sheet');
+var sheetsRouter = require('./routes/sheets');
 const fileRouter = require('./routes/fileOperation');
+var userId = -1;
 
 
 const express = require('express');
@@ -46,11 +49,14 @@ app.use(express.static(path.join(__dirname, 'public')));//docs static, ex: .css,
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
 app.use('/error', usersRouter);
-//app.use('/register', registerRouter);
-//app.use('/registerdone', registerRouter);
+app.use('/register', registerRouter);
+app.use('/registerNewClient', registerRouter);
 app.use('/login', loginRouter);
 app.use('/authentification', loginRouter);
 app.use('/files',fileRouter);
+app.use('/sheets', sheetsRouter);
+app.use('/sheet', sheetRouter);
+
 
 //****fonction middlewares**** ajouter ici
 // catch 404 and forward to error handler
@@ -71,3 +77,4 @@ app.use(function(err, req, res, next) {
 
 // exporter les variables globales pour les autres fichiers
 module.exports = app;
+global.userId = userId;
