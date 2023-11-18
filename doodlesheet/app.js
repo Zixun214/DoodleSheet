@@ -1,15 +1,16 @@
 // variables et constantes
-var createError = require('http-errors');
-var path = require('path');
-var cookieParser = require('cookie-parser');
-var logger = require('morgan');
+const createError = require('http-errors');
+const path = require('path');
+const cookieParser = require('cookie-parser');
+const logger = require('morgan');
 
-var indexRouter = require('./routes/index');
-var usersRouter = require('./routes/users');
-var registerRouter = require('./routes/register');
-var loginRouter = require('./routes/login');
-var sheetRouter = require('./routes/sheet');
-var sheetsRouter = require('./routes/sheets');
+const indexRouter = require('./routes/index');
+const usersRouter = require('./routes/users');
+const registerRouter = require('./routes/register');
+const loginRouter = require('./routes/login');
+const sheetRouter = require('./routes/sheet');
+const sheetsRouter = require('./routes/sheets');
+const createsheetRouter = require('./routes/createSheet');
 const fileRouter = require('./routes/fileOperation');
 var userId = -1;
 
@@ -56,6 +57,7 @@ app.use('/authentification', loginRouter);
 app.use('/files',fileRouter);
 app.use('/sheets', sheetsRouter);
 app.use('/sheet', sheetRouter);
+app.use('/createsheet', createsheetRouter);
 
 
 //****fonction middlewares**** ajouter ici

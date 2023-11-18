@@ -6,7 +6,6 @@ const sheetController = require('../controller/sheetController');
 /* GET sheet page. */
 router.get('/', async function(req, res, next) {
   var all =  await sheetController.getMyListOfSheets(req, res, next);
-  console.log(">>", all);
   res.render('sheets', { title: 'Your list of sheets' , all});
 });
 

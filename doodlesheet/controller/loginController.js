@@ -17,7 +17,6 @@ const authentification = async(req, res, next) => {
     var user = await userModel.findOne({name:postData.username});
     if(user){
       console.log(postData.password);
-      console.log(user.sheetid);
       console.log(user.userid);
       console.log(bcrypt.hashSync(postData.password,10));
       console.log(bcrypt.hashSync(user.password,10));
