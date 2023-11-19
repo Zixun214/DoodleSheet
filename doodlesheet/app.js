@@ -8,10 +8,7 @@ const indexRouter = require('./routes/index');
 const usersRouter = require('./routes/users');
 const registerRouter = require('./routes/register');
 const loginRouter = require('./routes/login');
-const sheetRouter = require('./routes/sheet');
-const sheetsRouter = require('./routes/sheets');
-const createsheetRouter = require('./routes/createSheet');
-const fileRouter = require('./routes/fileOperation');
+const sheetsRouter = require('./routes/sheetsOperation');
 var userId = -1;
 var sheetId = -1;
 
@@ -55,10 +52,9 @@ app.use('/register', registerRouter);
 app.use('/registerNewClient', registerRouter);
 app.use('/login', loginRouter);
 app.use('/authentification', loginRouter);
-app.use('/files',fileRouter);
 app.use('/sheets', sheetsRouter);
-app.use('/sheet/:sheetId', sheetRouter);
-app.use('/createsheet', createsheetRouter);
+app.use('/sheet/:sheetId', sheetsRouter);
+app.use('/createsheet', sheetsRouter);
 
 
 //****fonction middlewares**** ajouter ici

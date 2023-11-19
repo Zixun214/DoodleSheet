@@ -4,10 +4,7 @@ const mongoose = require('mongoose');
  * @constant SheetsSchema Le schéma d'un tableur 
  */
 const SheetsSchema = new mongoose.Schema({
-    sheetcontentid: {
-        type: Number,
-        required: true
-    },
+    // "_id" est crée par mongoDB, sheetId : item._id
     sheetname: {
         type: String,
         required: true
@@ -26,7 +23,6 @@ const SheetsSchema = new mongoose.Schema({
  * @constant Sheets Le modèle d'un tableur
  */
 
-let Sheets;
 try{
     Sheets = mongoose.model('sheets');
 }

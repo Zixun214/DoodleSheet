@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <title><%= title %></title>
-    <link rel="stylesheet" href="stylesheets/style.css">
+    <link rel="stylesheet" href="/stylesheets/style.css">
 </head>
     <body>
         <div class="container-log-in">
@@ -11,7 +11,7 @@
                 Create a new project and collab with your teamwork. 
                 <!--<a href='/register'>Register Now.</a>-->
             </p>
-            <form class="form-log-in" role="form" action="/createSheet/registerNewSheet" method="post">
+            <form class="form-log-in" role="form" action="/sheets/create-sheet" method="post">
                 <div class="form-group">
                     <label for="sheetname">Sheet name</label>
                     <input class="form-control" type="text" id="sheetname" name="sheetname" placeholder="enter a sheetname">

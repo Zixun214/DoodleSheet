@@ -2,14 +2,14 @@
 <html lang="en">
 <head>
     <title><%= title %></title>
-    <link rel="stylesheet" href="stylesheets/style.css">
+    <link rel="stylesheet" href="/stylesheets/style.css">
 </head>
     <body>
         <div class="container-home-page">
             <h1><%= title %></h1>
             <p>Welcome to <%= title %></p>
             <button class="my-button-start">
-                <a href="/createsheet">New Sheet</a>
+                <a href="sheets/createsheet">New Sheet</a>
             </button>
         </div>
         <div class="div-table">
@@ -25,7 +25,7 @@
                     <td> <%= item.sheetname %> </td>
                     <td> <%= item.dateCreated %> </td>
                     <td> <button class="my-button-action-open">
-                        <a href="/sheet/%<%= item.sheetcontentid %> ">Open</a>
+                        <a href="sheets/sheet/<%= item._id %> ">Open</a>
                     </button> </td>
                     <td> <button class="my-button-action-open">
                         <a href="#">Delete</a>

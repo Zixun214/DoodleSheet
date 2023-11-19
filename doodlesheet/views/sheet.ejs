@@ -2,15 +2,15 @@
 <html lang="en">
 <head>
     <title><%= sheetInfo.sheetname %></title>
-    <link rel="stylesheet" href="stylesheets/style.css">
+    <link rel="stylesheet" href="/stylesheets/style.css">
 </head>
     <body style="text-align: -webkit-center;">
         <div class="container-home-page">
             <h1><%= sheetInfo.sheetname %></h1>
             <!--<p>File name = "<%= title %>"</p> -->
-            <button class="my-button-start">
-                <a href="#">Save</a>
-            </button>
+            <form id="sheetForm">
+                <button type="submit" class="my-button-start">Save</button>
+            </form>
             <button class="my-button-start">
                 <a href="#">Edit</a>
             </button>
@@ -108,5 +108,53 @@
                 </tr>
               </table>
         </div>
+        <script>
+            document.getElementById('sheetForm').addEventListener('submit', function(event) {
+                console.log("submit , see me ?");
+                event.preventDefault(); // prevent default form,
+                //because data form is not transfered well
+
+                //const sheetData = collectSheetData();
+                //const sheetId = document.getElementById('sheetId').value;
+
+                // use fetch to send data
+                fetch('/sheets/save-sheet', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify({ test: 'test' })//body: JSON.stringify({ sheetId, sheetData })
+                })
+                    .then(response => {
+                        if (response.ok) {
+                            return response.text();
+                        }
+                        throw new Error('Network response was not ok.');
+                    })
+                    .then((data => console.log(data))
+                        //window.location.href = '/sheets';//redirect('/sheets')
+                        .catch(error => console.error('Error:', error)));
+            });
+            function collectSheetData() {
+                console.log("Collecting sheet data");
+                const rows = document.querySelectorAll('.sheet-table tr td');
+                const data = [];
+
+                rows.forEach((row, rowIndex) => {
+                    if (rowIndex === 0) return; // sauter 1er line
+
+                    const strings = row.querySelectorAll('input');
+                    const rowData = [];
+
+                    strings.forEach(str => {
+                        rowData.push(str.value || '-');
+                    });
+
+                    data.push(rowData);
+                });
+
+                return data;
+            }
+        </script>
     </body>
 </html>
