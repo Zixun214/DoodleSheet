@@ -13,6 +13,7 @@ const sheetsRouter = require('./routes/sheets');
 const createsheetRouter = require('./routes/createSheet');
 const fileRouter = require('./routes/fileOperation');
 var userId = -1;
+var sheetId = -1;
 
 
 const express = require('express');
@@ -56,7 +57,7 @@ app.use('/login', loginRouter);
 app.use('/authentification', loginRouter);
 app.use('/files',fileRouter);
 app.use('/sheets', sheetsRouter);
-app.use('/sheet', sheetRouter);
+app.use('/sheet/:sheetId', sheetRouter);
 app.use('/createsheet', createsheetRouter);
 
 
@@ -80,3 +81,4 @@ app.use(function(err, req, res, next) {
 // exporter les variables globales pour les autres fichiers
 module.exports = app;
 global.userId = userId;
+global.sheetId = sheetId;

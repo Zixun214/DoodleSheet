@@ -16,10 +16,12 @@ const authentification = async(req, res, next) => {
   else{
     var user = await userModel.findOne({name:postData.username});
     if(user){
+      /*
       console.log(postData.password);
       console.log(user.userid);
       console.log(bcrypt.hashSync(postData.password,10));
       console.log(bcrypt.hashSync(user.password,10));
+      */
       var passwordMatches = await bcrypt.compare(postData.password, bcrypt.hashSync(user.password,10));
       if(passwordMatches){
         global.userId = user.userid;

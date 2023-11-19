@@ -1,12 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title><%= title %></title>
+    <title><%= sheetInfo.sheetname %></title>
     <link rel="stylesheet" href="stylesheets/style.css">
 </head>
-    <body>
+    <body style="text-align: -webkit-center;">
         <div class="container-home-page">
-            <h1><%= title %></h1>
+            <h1><%= sheetInfo.sheetname %></h1>
             <!--<p>File name = "<%= title %>"</p> -->
             <button class="my-button-start">
                 <a href="#">Save</a>
@@ -17,10 +17,13 @@
             <button class="my-button-start">
                 <a href="#">Share</a>
             </button>
+            <button class="my-button-start">
+                <a href="#">Share</a>
+            </button>
         </div>
 
         <div class="sheet">
-            <table class="sheet-table">
+            <table class="sheet-table"style="text-align-last: center">
                 <tr class="title-col">
                     <td>&nbsp;</td>
                     <td class="title-sub-col">A</td>
@@ -30,77 +33,78 @@
                     <td class="title-sub-col">E</td>
                     <td class="title-sub-col">F</td>
                 </tr>
+                
                 <tr>
                     <td class="title-line">1</td>
-                    <td><input type="text" style="min-height: 30px" ></td>
-                    <td><input type="text" style="min-height: 30px" ></td>
-                    <td><input type="text" style="min-height: 30px" ></td>
-                    <td><input type="text" style="min-height: 30px" ></td>
-                    <td><input type="text" style="min-height: 30px" ></td>
-                    <td><input type="text" style="min-height: 30px" ></td>
+                    <td><input type="text" style="min-height: 30px" placeholder="<%= sheetContent[0].content %> "> </td>
+                    <td><input type="text" style="min-height: 30px" placeholder="<%= sheetContent[1].content %> "> </td>
+                    <td><input type="text" style="min-height: 30px" placeholder="<%= sheetContent[2].content %> "> </td>
+                    <td><input type="text" style="min-height: 30px" placeholder="<%= sheetContent[3].content %> "> </td>
+                    <td><input type="text" style="min-height: 30px" placeholder="<%= sheetContent[4].content %> "> </td>
+                    <td><input type="text" style="min-height: 30px" placeholder="<%= sheetContent[5].content %> "> </td>
                 </tr>
                 <tr>
                     <td class="title-line">2</td>
-                    <td><input type="text" style="min-height: 30px" ></td>
-                    <td><input type="text" style="min-height: 30px" ></td>
-                    <td><input type="text" style="min-height: 30px" ></td>
-                    <td><input type="text" style="min-height: 30px" ></td>
-                    <td><input type="text" style="min-height: 30px" ></td>
-                    <td><input type="text" style="min-height: 30px" ></td>
+                    <td><input type="text" style="min-height: 30px" placeholder="<%= sheetContent[6].content %> "> </td>
+                    <td><input type="text" style="min-height: 30px" placeholder="<%= sheetContent[7].content %> "> </td>
+                    <td><input type="text" style="min-height: 30px" placeholder="<%= sheetContent[8].content %> "> </td>
+                    <td><input type="text" style="min-height: 30px" placeholder="<%= sheetContent[9].content %> "> </td>
+                    <td><input type="text" style="min-height: 30px" placeholder="<%= sheetContent[10].content %> "> </td>
+                    <td><input type="text" style="min-height: 30px" placeholder="<%= sheetContent[11].content %> "> </td>
                 </tr>
                 <tr>
                     <td class="title-line">3</td>
-                    <td><input type="text" style="min-height: 30px" ></td>
-                    <td><input type="text" style="min-height: 30px" ></td>
-                    <td><input type="text" style="min-height: 30px" ></td>
-                    <td><input type="text" style="min-height: 30px" ></td>
-                    <td><input type="text" style="min-height: 30px" ></td>
-                    <td><input type="text" style="min-height: 30px" ></td>
+                    <td><input type="text" style="min-height: 30px" placeholder="<%= sheetContent[12].content %> "> </td>
+                    <td><input type="text" style="min-height: 30px" placeholder="<%= sheetContent[13].content %> "> </td>
+                    <td><input type="text" style="min-height: 30px" placeholder="<%= sheetContent[14].content %> "> </td>
+                    <td><input type="text" style="min-height: 30px" placeholder="<%= sheetContent[15].content %> "> </td>
+                    <td><input type="text" style="min-height: 30px" placeholder="<%= sheetContent[16].content %> "> </td>
+                    <td><input type="text" style="min-height: 30px" placeholder="<%= sheetContent[17].content %> "> </td>
                 </tr>
                 <tr>
                     <td class="title-line">4</td>
-                    <td><input type="text" style="min-height: 30px" ></td>
-                    <td><input type="text" style="min-height: 30px" ></td>
-                    <td><input type="text" style="min-height: 30px" ></td>
-                    <td><input type="text" style="min-height: 30px" ></td>
-                    <td><input type="text" style="min-height: 30px" ></td>
-                    <td><input type="text" style="min-height: 30px" ></td>
+                    <td><input type="text" style="min-height: 30px" placeholder="<%= sheetContent[18].content %> "> </td>
+                    <td><input type="text" style="min-height: 30px" placeholder="<%= sheetContent[19].content %> "> </td>
+                    <td><input type="text" style="min-height: 30px" placeholder="<%= sheetContent[20].content %> "> </td>
+                    <td><input type="text" style="min-height: 30px" placeholder="<%= sheetContent[21].content %> "> </td>
+                    <td><input type="text" style="min-height: 30px" placeholder="<%= sheetContent[22].content %> "> </td>
+                    <td><input type="text" style="min-height: 30px" placeholder="<%= sheetContent[23].content %> "> </td>
                 </tr>
                 <tr>
                     <td class="title-line">5</td>
-                    <td><input type="text" style="min-height: 30px" ></td>
-                    <td><input type="text" style="min-height: 30px" ></td>
-                    <td><input type="text" style="min-height: 30px" ></td>
-                    <td><input type="text" style="min-height: 30px" ></td>
-                    <td><input type="text" style="min-height: 30px" ></td>
-                    <td><input type="text" style="min-height: 30px" ></td>
+                    <td><input type="text" style="min-height: 30px" placeholder="<%= sheetContent[24].content %> "> </td>
+                    <td><input type="text" style="min-height: 30px" placeholder="<%= sheetContent[25].content %> "> </td>
+                    <td><input type="text" style="min-height: 30px" placeholder="<%= sheetContent[26].content %> "> </td>
+                    <td><input type="text" style="min-height: 30px" placeholder="<%= sheetContent[27].content %> "> </td>
+                    <td><input type="text" style="min-height: 30px" placeholder="<%= sheetContent[28].content %> "> </td>
+                    <td><input type="text" style="min-height: 30px" placeholder="<%= sheetContent[29].content %> "> </td>
                 </tr>
                 <tr>
                     <td class="title-line">6</td>
-                    <td><input type="text" style="min-height: 30px" ></td>
-                    <td><input type="text" style="min-height: 30px" ></td>
-                    <td><input type="text" style="min-height: 30px" ></td>
-                    <td><input type="text" style="min-height: 30px" ></td>
-                    <td><input type="text" style="min-height: 30px" ></td>
-                    <td><input type="text" style="min-height: 30px" ></td>
+                    <td><input type="text" style="min-height: 30px" placeholder="<%= sheetContent[30].content %> "> </td>
+                    <td><input type="text" style="min-height: 30px" placeholder="<%= sheetContent[31].content %> "> </td>
+                    <td><input type="text" style="min-height: 30px" placeholder="<%= sheetContent[32].content %> "> </td>
+                    <td><input type="text" style="min-height: 30px" placeholder="<%= sheetContent[33].content %> "> </td>
+                    <td><input type="text" style="min-height: 30px" placeholder="<%= sheetContent[34].content %> "> </td>
+                    <td><input type="text" style="min-height: 30px" placeholder="<%= sheetContent[35].content %> "> </td>
                 </tr>
                 <tr>
                     <td class="title-line">7</td>
-                    <td><input type="text" style="min-height: 30px" ></td>
-                    <td><input type="text" style="min-height: 30px" ></td>
-                    <td><input type="text" style="min-height: 30px" ></td>
-                    <td><input type="text" style="min-height: 30px" ></td>
-                    <td><input type="text" style="min-height: 30px" ></td>
-                    <td><input type="text" style="min-height: 30px" ></td>
+                    <td><input type="text" style="min-height: 30px" placeholder="<%= sheetContent[36].content %> "> </td>
+                    <td><input type="text" style="min-height: 30px" placeholder="<%= sheetContent[37].content %> "> </td>
+                    <td><input type="text" style="min-height: 30px" placeholder="<%= sheetContent[38].content %> "> </td>
+                    <td><input type="text" style="min-height: 30px" placeholder="<%= sheetContent[39].content %> "> </td>
+                    <td><input type="text" style="min-height: 30px" placeholder="<%= sheetContent[40].content %> "> </td>
+                    <td><input type="text" style="min-height: 30px" placeholder="<%= sheetContent[41].content %> "> </td>
                 </tr>
                 <tr>
                     <td class="title-line">8</td>
-                    <td><input type="text" style="min-height: 30px" ></td>
-                    <td><input type="text" style="min-height: 30px" ></td>
-                    <td><input type="text" style="min-height: 30px" ></td>
-                    <td><input type="text" style="min-height: 30px" ></td>
-                    <td><input type="text" style="min-height: 30px" ></td>
-                    <td><input type="text" style="min-height: 30px" ></td>
+                    <td><input type="text" style="min-height: 30px" placeholder="<%= sheetContent[42].content %> "> </td>
+                    <td><input type="text" style="min-height: 30px" placeholder="<%= sheetContent[43].content %> "> </td>
+                    <td><input type="text" style="min-height: 30px" placeholder="<%= sheetContent[44].content %> "> </td>
+                    <td><input type="text" style="min-height: 30px" placeholder="<%= sheetContent[45].content %> "> </td>
+                    <td><input type="text" style="min-height: 30px" placeholder="<%= sheetContent[46].content %> "> </td>
+                    <td><input type="text" style="min-height: 30px" placeholder="<%= sheetContent[47].content %> "> </td>
                 </tr>
               </table>
         </div>
