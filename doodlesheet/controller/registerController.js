@@ -44,4 +44,17 @@ const registerNewClient =  async(req, res, next)  => {
     }
   };
 
-module.exports = {registerNewClient};
+/**
+ * 
+ * @param {*} req 
+ * @param {*} res 
+ * @param {*} next 
+ * @param {*} username username de l'user
+ * @returns 
+ */
+const getUser = async(req, res, nex, username) => {
+  var user = await userModel.findOne({name:username});
+  return user;
+}
+
+module.exports = {registerNewClient, getUser};

@@ -14,10 +14,10 @@ const usercollectionSchema = new mongoose.Schema({
  */
 
 let Usercollections;
-//try{
-  //  Usercollections = mongoose.model('usercollections');
-//}
-//catch(error){
+try{
+    Usercollections = mongoose.model('usercollections');
+}
+catch(error){
 Usercollections = mongoose.model('usercollections', usercollectionSchema);
-//}
+}
 module.exports = Usercollections;

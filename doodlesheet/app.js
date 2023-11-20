@@ -12,7 +12,7 @@ const sheetRouter = require('./routes/sheet');
 const sheetsRouter = require('./routes/sheets');
 const createsheetRouter = require('./routes/createSheet');
 const fileRouter = require('./routes/fileOperation');
-//const membersRouter = require('./routes/members')
+const membersRouter = require('./routes/members')
 var userId = 1;
 var sheetId = -1;
 
@@ -58,7 +58,7 @@ app.use('/files',fileRouter);
 app.use('/sheets', sheetsRouter);
 app.use('/sheet', sheetRouter);
 app.use('/createsheet', createsheetRouter);
-//app.use('/members', membersRouter);
+app.use('/members', membersRouter);
 
 
 //****fonction middlewares**** ajouter ici
