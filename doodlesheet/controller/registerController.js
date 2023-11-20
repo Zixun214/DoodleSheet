@@ -22,10 +22,12 @@ const registerNewClient =  async(req, res, next)  => {
         res.send('Ce nom est déjà utilisé par un autre utilisateur'); 
       }
       else{
+        var userid = Math.floor(Math.random() * 9999999);
         if(postData.password.length >= 0){
           const newUser = new userModel({
             name: postData.username,
-            password: postData.password
+            password: postData.password,
+            userid: userid
           });
           newUser.save()
           .then((result) => {
