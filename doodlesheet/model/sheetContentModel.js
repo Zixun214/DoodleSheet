@@ -14,7 +14,7 @@ const SheetsSchemaContent = new mongoose.Schema({
  * @constant SheetsContent Le modèle du contenu d'un tableur
  */
 
-let SheetsContent;
+//let SheetsContent;
 try{
     SheetsContent = mongoose.model('sheetcontents');
 }

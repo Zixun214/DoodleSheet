@@ -144,4 +144,17 @@ const registerNewSheet =  async(req, res, next)  => {
         }
     };
 
-module.exports = {registerNewSheet, getMyListOfSheets,getSheet, getSheetContent, savesheet};
+const deleteSheet = async (fileId) => {
+    try {
+        const result = await sheetModel.deleteOne({ _id: fileId });
+        if (result.deletedCount === 0) {
+            throw new Error('Sheet not found');
+        }
+        return { success: true, message: 'File successfully deleted' };
+    } catch (error) {
+        console.error('Error in deleteSheet:', error);
+        throw error;
+    }
+};
+
+module.exports = {registerNewSheet, getMyListOfSheets,getSheet, getSheetContent, savesheet, deleteSheet};

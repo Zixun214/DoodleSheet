@@ -28,8 +28,8 @@
                     <td> <button class="my-button-action-open">
                         <a href="/sheet/<%= item.sheetcontentid %> ">Open</a>
                     </button> </td>
-                    <td> <button class="my-button-action-open">
-                        <a href="#">Delete</a>
+                    <td> <button class="my-button-action-open" onclick="deleteFile('<%= item._id %>')">
+                        <a href="/sheets">Delete</a>
                     </button> </td>
                     <td> <button class="my-button-action-open">
                         <a href="/members/<%= item.sheetcontentid %>">Share</a>
@@ -41,5 +41,23 @@
         </div>
             <ul>
             </ul>
+    <script>
+        function deleteFile(fileId) {
+            if (confirm('Vous voulez supprimer ce fichier ?')) {
+                fetch(`/deleteSheet/${fileId}`, { method: 'DELETE' })
+                    .then(response => {
+                        if (response.ok) {
+                            return response.json();
+                        }
+                        throw new Error('Network response was not ok.');
+                    })
+                    .then(data => {
+                        console.log('File deleted:', data);
+                        //window.location.href = '/sheets';// redirect vers/sheets
+                    })
+                    .catch(error => console.error('Error deleting file:', error));
+            }
+        }
+    </script>
     </body>
 </html>

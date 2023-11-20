@@ -26,7 +26,7 @@ const SheetsSchema = new mongoose.Schema({
  * @constant Sheets Le modèle d'un tableur
  */
 
-let Sheets;
+//let Sheets;
 try{
     Sheets = mongoose.model('sheets');
 }
