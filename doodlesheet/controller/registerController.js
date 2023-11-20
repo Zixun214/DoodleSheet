@@ -12,7 +12,7 @@ const registerNewClient =  async(req, res, next)  => {
     const postData = req.body;
     console.log("Received POST data : ", postData);
     //Test connection
-    if(postData.username === '' || postData.password === ''){
+    if(postData.username == '' || postData.password == ''){
       res.send('Les champs ne sont pas complets');
       res.status(401); // Inscription non réussie
     }

@@ -13,11 +13,11 @@ const usercollectionSchema = new mongoose.Schema({
  * @constant Usercollections Le modèle de Utilisateur 
  */
 
-
-try{
-    Usercollections = mongoose.model('usercollections');
-}
-catch(error){
-    Usercollections = mongoose.model('usercollections', usercollectionSchema);
-}
+let Usercollections;
+//try{
+  //  Usercollections = mongoose.model('usercollections');
+//}
+//catch(error){
+Usercollections = mongoose.model('usercollections', usercollectionSchema);
+//}
 module.exports = Usercollections;

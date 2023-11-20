@@ -22,11 +22,11 @@ router.get("/", async(req, res) => {
  */
 router.post('/authentification', async function(req, res, next) {
   await loginController.authentification(req, res, next);
-  if(res.statusCode === 200){
+  if(res.statusCode == 200){
     //res.send("Connection réussie");
     res.redirect('/sheets');
   }
-  if(res.statusCode === 401){
+  if(res.statusCode == 401){
     res.send("Connection non réussie");
   }
 });

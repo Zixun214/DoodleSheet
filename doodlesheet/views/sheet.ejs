@@ -5,22 +5,14 @@
     <link rel="stylesheet" href="/stylesheets/style.css">
 </head>
     <body style="text-align: -webkit-center;">
+
+        
         <div class="container-home-page">
             <h1><%= sheetInfo.sheetname %></h1>
-            <!--<p>File name = "<%= title %>"</p> -->
-            <form id="sheetForm">
-                <button type="submit" class="my-button-start">Save</button>
-            </form>
-            <button class="my-button-start">
-                <a href="#">Edit</a>
-            </button>
-            <button class="my-button-start">
-                <a href="#">Share</a>
-            </button>
-            <button class="my-button-start">
-                <a href="#">Share</a>
-            </button>
+            <div style="display: inline-block">
+            </div>
         </div>
+        <form class="form-save-sheet" role="form" action="/sheet/save/<%= sheetInfo.sheetcontentid %>" method="post">
 
         <div class="sheet">
             <table class="sheet-table"style="text-align-last: center">
@@ -34,127 +26,85 @@
                     <td class="title-sub-col">F</td>
                 </tr>
                 
-                <tr>
+                <tr id="1">
                     <td class="title-line">1</td>
-                    <td><input type="text" style="min-height: 30px" placeholder="<%= sheetContent[0].content %> "> </td>
-                    <td><input type="text" style="min-height: 30px" placeholder="<%= sheetContent[1].content %> "> </td>
-                    <td><input type="text" style="min-height: 30px" placeholder="<%= sheetContent[2].content %> "> </td>
-                    <td><input type="text" style="min-height: 30px" placeholder="<%= sheetContent[3].content %> "> </td>
-                    <td><input type="text" style="min-height: 30px" placeholder="<%= sheetContent[4].content %> "> </td>
-                    <td><input type="text" style="min-height: 30px" placeholder="<%= sheetContent[5].content %> "> </td>
+                    <td id="A"><input type="text" name="caseText" style="min-height: 30px" placeholder="<%= sheetContent[0].content %> "> </td>
+                    <td id="B"><input type="text" name="caseText" style="min-height: 30px" placeholder="<%= sheetContent[1].content %> "> </td>
+                    <td id="C"><input type="text" name="caseText" style="min-height: 30px" placeholder="<%= sheetContent[2].content %> "> </td>
+                    <td id="D"><input type="text" name="caseText" style="min-height: 30px" placeholder="<%= sheetContent[3].content %> "> </td>
+                    <td id="E"><input type="text" name="caseText" style="min-height: 30px" placeholder="<%= sheetContent[4].content %> "> </td>
+                    <td id="F"><input type="text" name="caseText" style="min-height: 30px" placeholder="<%= sheetContent[5].content %> "> </td>
                 </tr>
-                <tr>
+                <tr  id="2">
                     <td class="title-line">2</td>
-                    <td><input type="text" style="min-height: 30px" placeholder="<%= sheetContent[6].content %> "> </td>
-                    <td><input type="text" style="min-height: 30px" placeholder="<%= sheetContent[7].content %> "> </td>
-                    <td><input type="text" style="min-height: 30px" placeholder="<%= sheetContent[8].content %> "> </td>
-                    <td><input type="text" style="min-height: 30px" placeholder="<%= sheetContent[9].content %> "> </td>
-                    <td><input type="text" style="min-height: 30px" placeholder="<%= sheetContent[10].content %> "> </td>
-                    <td><input type="text" style="min-height: 30px" placeholder="<%= sheetContent[11].content %> "> </td>
+                    <td id="A"><input type="text" name="caseText" style="min-height: 30px" placeholder="<%= sheetContent[6].content %> "> </td>
+                    <td id="B"><input type="text" name="caseText" style="min-height: 30px" placeholder="<%= sheetContent[7].content %> "> </td>
+                    <td id="C"><input type="text" name="caseText" style="min-height: 30px" placeholder="<%= sheetContent[8].content %> "> </td>
+                    <td id="D"><input type="text" name="caseText" style="min-height: 30px" placeholder="<%= sheetContent[9].content %> "> </td>
+                    <td id="E"><input type="text" name="caseText" style="min-height: 30px" placeholder="<%= sheetContent[10].content %> "> </td>
+                    <td id="F"><input type="text" name="caseText" style="min-height: 30px" placeholder="<%= sheetContent[11].content %> "> </td>
                 </tr>
-                <tr>
+                <tr  id="3">
                     <td class="title-line">3</td>
-                    <td><input type="text" style="min-height: 30px" placeholder="<%= sheetContent[12].content %> "> </td>
-                    <td><input type="text" style="min-height: 30px" placeholder="<%= sheetContent[13].content %> "> </td>
-                    <td><input type="text" style="min-height: 30px" placeholder="<%= sheetContent[14].content %> "> </td>
-                    <td><input type="text" style="min-height: 30px" placeholder="<%= sheetContent[15].content %> "> </td>
-                    <td><input type="text" style="min-height: 30px" placeholder="<%= sheetContent[16].content %> "> </td>
-                    <td><input type="text" style="min-height: 30px" placeholder="<%= sheetContent[17].content %> "> </td>
+                    <td id="A"><input type="text" name="caseText" style="min-height: 30px" placeholder="<%= sheetContent[12].content %> "> </td>
+                    <td id="B"><input type="text" name="caseText" style="min-height: 30px" placeholder="<%= sheetContent[13].content %> "> </td>
+                    <td id="C"><input type="text" name="caseText" style="min-height: 30px" placeholder="<%= sheetContent[14].content %> "> </td>
+                    <td id="D"><input type="text" name="caseText" style="min-height: 30px" placeholder="<%= sheetContent[15].content %> "> </td>
+                    <td id="E"><input type="text" name="caseText" style="min-height: 30px" placeholder="<%= sheetContent[16].content %> "> </td>
+                    <td id="F"><input type="text" name="caseText" style="min-height: 30px" placeholder="<%= sheetContent[17].content %> "> </td>
                 </tr>
-                <tr>
+                <tr  id="4">
                     <td class="title-line">4</td>
-                    <td><input type="text" style="min-height: 30px" placeholder="<%= sheetContent[18].content %> "> </td>
-                    <td><input type="text" style="min-height: 30px" placeholder="<%= sheetContent[19].content %> "> </td>
-                    <td><input type="text" style="min-height: 30px" placeholder="<%= sheetContent[20].content %> "> </td>
-                    <td><input type="text" style="min-height: 30px" placeholder="<%= sheetContent[21].content %> "> </td>
-                    <td><input type="text" style="min-height: 30px" placeholder="<%= sheetContent[22].content %> "> </td>
-                    <td><input type="text" style="min-height: 30px" placeholder="<%= sheetContent[23].content %> "> </td>
+                    <td id="A"><input type="text" name="caseText" style="min-height: 30px" placeholder="<%= sheetContent[18].content %> "> </td>
+                    <td id="B"><input type="text" name="caseText" style="min-height: 30px" placeholder="<%= sheetContent[19].content %> "> </td>
+                    <td id="C"><input type="text" name="caseText" style="min-height: 30px" placeholder="<%= sheetContent[20].content %> "> </td>
+                    <td id="D"><input type="text" name="caseText" style="min-height: 30px" placeholder="<%= sheetContent[21].content %> "> </td>
+                    <td id="E"><input type="text" name="caseText" style="min-height: 30px" placeholder="<%= sheetContent[22].content %> "> </td>
+                    <td id="F"><input type="text" name="caseText" style="min-height: 30px" placeholder="<%= sheetContent[23].content %> "> </td>
                 </tr>
-                <tr>
+                <tr id="5">
                     <td class="title-line">5</td>
-                    <td><input type="text" style="min-height: 30px" placeholder="<%= sheetContent[24].content %> "> </td>
-                    <td><input type="text" style="min-height: 30px" placeholder="<%= sheetContent[25].content %> "> </td>
-                    <td><input type="text" style="min-height: 30px" placeholder="<%= sheetContent[26].content %> "> </td>
-                    <td><input type="text" style="min-height: 30px" placeholder="<%= sheetContent[27].content %> "> </td>
-                    <td><input type="text" style="min-height: 30px" placeholder="<%= sheetContent[28].content %> "> </td>
-                    <td><input type="text" style="min-height: 30px" placeholder="<%= sheetContent[29].content %> "> </td>
+                    <td id="A"><input type="text" name="caseText" style="min-height: 30px" placeholder="<%= sheetContent[24].content %> "> </td>
+                    <td id="B"><input type="text" name="caseText" style="min-height: 30px" placeholder="<%= sheetContent[25].content %> "> </td>
+                    <td id="C"><input type="text" name="caseText" style="min-height: 30px" placeholder="<%= sheetContent[26].content %> "> </td>
+                    <td id="D"><input type="text" name="caseText" style="min-height: 30px" placeholder="<%= sheetContent[27].content %> "> </td>
+                    <td id="E"><input type="text" name="caseText" style="min-height: 30px" placeholder="<%= sheetContent[28].content %> "> </td>
+                    <td id="F"><input type="text" name="caseText" style="min-height: 30px" placeholder="<%= sheetContent[29].content %> "> </td>
                 </tr>
-                <tr>
+                <tr  id="6">
                     <td class="title-line">6</td>
-                    <td><input type="text" style="min-height: 30px" placeholder="<%= sheetContent[30].content %> "> </td>
-                    <td><input type="text" style="min-height: 30px" placeholder="<%= sheetContent[31].content %> "> </td>
-                    <td><input type="text" style="min-height: 30px" placeholder="<%= sheetContent[32].content %> "> </td>
-                    <td><input type="text" style="min-height: 30px" placeholder="<%= sheetContent[33].content %> "> </td>
-                    <td><input type="text" style="min-height: 30px" placeholder="<%= sheetContent[34].content %> "> </td>
-                    <td><input type="text" style="min-height: 30px" placeholder="<%= sheetContent[35].content %> "> </td>
+                    <td id="A"><input type="text" name="caseText" style="min-height: 30px" placeholder="<%= sheetContent[30].content %> "> </td>
+                    <td id="B"><input type="text" name="caseText" style="min-height: 30px" placeholder="<%= sheetContent[31].content %> "> </td>
+                    <td id="C"><input type="text" name="caseText" style="min-height: 30px" placeholder="<%= sheetContent[32].content %> "> </td>
+                    <td id="D"><input type="text" name="caseText" style="min-height: 30px" placeholder="<%= sheetContent[33].content %> "> </td>
+                    <td id="E"><input type="text" name="caseText" style="min-height: 30px" placeholder="<%= sheetContent[34].content %> "> </td>
+                    <td id="F"><input type="text" name="caseText" style="min-height: 30px" placeholder="<%= sheetContent[35].content %> "> </td>
                 </tr>
-                <tr>
+                <tr id="7">
                     <td class="title-line">7</td>
-                    <td><input type="text" style="min-height: 30px" placeholder="<%= sheetContent[36].content %> "> </td>
-                    <td><input type="text" style="min-height: 30px" placeholder="<%= sheetContent[37].content %> "> </td>
-                    <td><input type="text" style="min-height: 30px" placeholder="<%= sheetContent[38].content %> "> </td>
-                    <td><input type="text" style="min-height: 30px" placeholder="<%= sheetContent[39].content %> "> </td>
-                    <td><input type="text" style="min-height: 30px" placeholder="<%= sheetContent[40].content %> "> </td>
-                    <td><input type="text" style="min-height: 30px" placeholder="<%= sheetContent[41].content %> "> </td>
+                    <td id="A"><input type="text" name="caseText" style="min-height: 30px" placeholder="<%= sheetContent[36].content %> "> </td>
+                    <td id="B"><input type="text" name="caseText" style="min-height: 30px" placeholder="<%= sheetContent[37].content %> "> </td>
+                    <td id="C"><input type="text" name="caseText" style="min-height: 30px" placeholder="<%= sheetContent[38].content %> "> </td>
+                    <td id="D"><input type="text" name="caseText" style="min-height: 30px" placeholder="<%= sheetContent[39].content %> "> </td>
+                    <td id="E"><input type="text" name="caseText" style="min-height: 30px" placeholder="<%= sheetContent[40].content %> "> </td>
+                    <td id="F"><input type="text" name="caseText" style="min-height: 30px" placeholder="<%= sheetContent[41].content %> "> </td>
                 </tr>
-                <tr>
+                <tr  id="8">
                     <td class="title-line">8</td>
-                    <td><input type="text" style="min-height: 30px" placeholder="<%= sheetContent[42].content %> "> </td>
-                    <td><input type="text" style="min-height: 30px" placeholder="<%= sheetContent[43].content %> "> </td>
-                    <td><input type="text" style="min-height: 30px" placeholder="<%= sheetContent[44].content %> "> </td>
-                    <td><input type="text" style="min-height: 30px" placeholder="<%= sheetContent[45].content %> "> </td>
-                    <td><input type="text" style="min-height: 30px" placeholder="<%= sheetContent[46].content %> "> </td>
-                    <td><input type="text" style="min-height: 30px" placeholder="<%= sheetContent[47].content %> "> </td>
+                    <td id="A"><input type="text" name="caseText" style="min-height: 30px" placeholder="<%= sheetContent[42].content %> "> </td>
+                    <td id="B"><input type="text" name="caseText" style="min-height: 30px" placeholder="<%= sheetContent[43].content %> "> </td>
+                    <td id="C"><input type="text" name="caseText" style="min-height: 30px" placeholder="<%= sheetContent[44].content %> "> </td>
+                    <td id="D"><input type="text" name="caseText" style="min-height: 30px" placeholder="<%= sheetContent[45].content %> "> </td>
+                    <td id="E"><input type="text" name="caseText" style="min-height: 30px" placeholder="<%= sheetContent[46].content %> "> </td>
+                    <td id="F"><input type="text" name="caseText" style="min-height: 30px" placeholder="<%= sheetContent[47].content %> "> </td>
                 </tr>
               </table>
+              <button class="btn btn-primary" type="submit">Save</button>
+                </form>
+                <!--<form class="form-close-sheet" role="form" action="/close" method="post">
+                    <button class="btn btn-primary" type="submit">Close</button>
+                </form>
+                -->
         </div>
-        <script>
-            document.getElementById('sheetForm').addEventListener('submit', function(event) {
-                console.log("submit , see me ?");
-                event.preventDefault(); // prevent default form,
-                //because data form is not transfered well
-
-                //const sheetData = collectSheetData();
-                //const sheetId = document.getElementById('sheetId').value;
-
-                // use fetch to send data
-                fetch('/sheets/save-sheet', {
-                    method: 'POST',
-                    headers: {
-                        'Content-Type': 'application/json'
-                    },
-                    body: JSON.stringify({ test: 'test' })//body: JSON.stringify({ sheetId, sheetData })
-                })
-                    .then(response => {
-                        if (response.ok) {
-                            return response.text();
-                        }
-                        throw new Error('Network response was not ok.');
-                    })
-                    .then((data => console.log(data))
-                        //window.location.href = '/sheets';//redirect('/sheets')
-                        .catch(error => console.error('Error:', error)));
-            });
-            function collectSheetData() {
-                console.log("Collecting sheet data");
-                const rows = document.querySelectorAll('.sheet-table tr td');
-                const data = [];
-
-                rows.forEach((row, rowIndex) => {
-                    if (rowIndex === 0) return; // sauter 1er line
-
-                    const strings = row.querySelectorAll('input');
-                    const rowData = [];
-
-                    strings.forEach(str => {
-                        rowData.push(str.value || '-');
-                    });
-
-                    data.push(rowData);
-                });
-
-                return data;
-            }
-        </script>
     </body>
 </html>

@@ -5,18 +5,16 @@ const mongoose = require('mongoose');
  */
 const SheetsSchemaContent = new mongoose.Schema({
     column : String,
-    row : Number,
+    row : String,
     content : String,
-    sheetcontentid: {
-        type: mongoose.Schema.Types.ObjectId,
-        ref: 'Sheet'
-    }
+    sheetcontentid: Number
 });
   
 /**
  * @constant SheetsContent Le modèle du contenu d'un tableur
  */
 
+let SheetsContent;
 try{
     SheetsContent = mongoose.model('sheetcontents');
 }
