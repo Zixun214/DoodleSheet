@@ -31,8 +31,8 @@
                     <td> <button class="my-button-action-open" onclick="deleteFile('<%= item._id %>')">
                         <a href="/sheets">Delete</a>
                     </button> </td>
-                    <td> <button class="my-button-action-open">
-                        <a href="/members/<%= item.sheetcontentid %>">Share</a>
+                    <td> <button class="my-button-action-open" onclick="addMember(' <%= item._id %>')">
+                        <a href="/sheets">Share</a>
                     </button> </td>
                 </tr>
                 <% }) %>
@@ -57,6 +57,20 @@
                     })
                     .catch(error => console.error('Error deleting file:', error));
             }
+        }
+        function addMember(fileId) {
+            userToAdd = prompt('Entrez le nom de la personne à ajouter : ');
+            fetch(`/addMember/${fileId}${userToAdd}`, {method: 'GET' })
+            .then(response => {
+                        if (response.ok) {
+                            return response.json();
+                        }
+                        throw new Error('Network response was not ok.');
+                    })
+                    .then(data => {
+                        console.log('Membre ajouté:', data);
+                    })
+                    .catch(error => console.error('Error adding member:', error));
         }
     </script>
     </body>

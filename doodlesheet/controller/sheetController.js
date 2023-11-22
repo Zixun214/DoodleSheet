@@ -157,4 +157,20 @@ const deleteSheet = async (fileId) => {
     }
 };
 
-module.exports = {registerNewSheet, getMyListOfSheets,getSheet, getSheetContent, savesheet, deleteSheet};
+const addMemberToSheet = async (fileID, userToAdd) => {
+    try {
+        const findUser = await usercollections.find({
+            name: userToAdd
+        });
+        if (findUser == null) {
+            return { success: false, message: ''}
+        } else {
+            //todo
+        }
+    } catch {
+        console.error('Error in addMember:', error);
+        throw error;
+    }
+}
+
+module.exports = {registerNewSheet, getMyListOfSheets,getSheet, getSheetContent, savesheet, deleteSheet, addMemberToSheet};
