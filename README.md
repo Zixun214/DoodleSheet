@@ -1,5 +1,5 @@
 # DoodleSheet a platform for sheets like Google Sheets
-Projectt from Design Pattern 
+Project from Design Pattern 
 ## Instructions
 ```bash
 npm install
